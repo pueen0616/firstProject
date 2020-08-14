@@ -4,52 +4,58 @@ import java.util.Scanner;
 
 public class ArrayExmaple09 {
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		boolean run = true;
 		int studentNum = 0;
 		int[] scores = null;
-		Scanner scanner = new Scanner(System.in);
 
 		while (run) {
 			System.out.println("--------------------------------------------");
-			System.out.println("1.ÇĞ»ı¼ö | 2.Á¡¼öÀÔ·Â | 3.Á¡¼ö¸®½ºÆ® | 4.ºĞ¼® | 5.Á¾·á");
+			System.out.println("1.í•™ìƒìˆ˜ | 2.ì ìˆ˜ì…ë ¥ | 3.ì ìˆ˜ë¦¬ìŠ¤íŠ¸ | 4.ë¶„ì„ | 5.ì¢…ë£Œ");
 			System.out.println("--------------------------------------------");
-			System.out.println("¼±ÅÃ> ");
+			System.out.println("ì„ íƒ> ");
 
 			int selectNo = scanner.nextInt();
 
 			if (selectNo == 1) {
-				System.out.print("ÇĞ»ı ¼ö : ");
+				System.out.print("í•™ìƒ ìˆ˜ : ");
 				studentNum = scanner.nextInt();
-				scores = new int[studentNum]; // ¹è¿­ »ı¼º
+				scores = new int[studentNum]; // ë°°ì—´ ìƒì„±
 
 			} else if (selectNo == 2) {
-				System.out.print("Á¡¼ö ÀÔ·Â : ");
-				studentNum = scanner.nextInt();
-				for (int i = 1; i < scores.length; i++) {
+				System.out.println("ì ìˆ˜ ì…ë ¥ : ");
+				for (int i = 0; i < scores.length; i++) {
 					scores[i] = scanner.nextInt();
 				}
 
 			} else if (selectNo == 3) {
-				System.out.print("Á¡¼ö ¸®½ºÆ® : ");
-				System.out.println(scores);
-
+				System.out.print("ì ìˆ˜ ë¦¬ìŠ¤íŠ¸ : ");
+				for (int i = 0; i < scores.length; i++) {
+					System.out.println(scores[i]);
+				}
 			} else if (selectNo == 4) {
-				System.out.print("ºĞ¼® : ");
+				System.out.print("ë¶„ì„ : ");
 
 				int MAX = 0;
 				int sum = 0;
 				double avg = 0;
+
 				for (int i = 0; i < scores.length; i++) {
-					sum += sum + scores[i];
+					sum += scores[i]; // ì ìˆ˜ ì´í•©
 				}
-				avg = sum / scores.length;
-				System.out.println(sum + " ," + avg + "" + MAX);
+				avg = sum / scores.length; // ì ìˆ˜ í‰ê· 
+
+				for (int i : scores) {
+					if (i > MAX) {
+						MAX = i; // ìµœëŒ“ê°’
+					}
+				}
+				System.out.println(sum + ", " + avg + ", " + MAX);
 
 			} else if (selectNo == 5) {
 				run = false;
 			}
 		}
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
-
+		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 	}
 }
