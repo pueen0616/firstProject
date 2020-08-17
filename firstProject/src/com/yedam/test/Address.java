@@ -63,27 +63,24 @@ public class Address {
 				}
 				for (int i = 0; i < fAry.length; i++) {
 					if (input1.equals(fAry[i].name)) {
-							System.out.println("이름: ");
-							input1 = scn.nextLine();
+						System.out.println("이름: ");
+						input1 = scn.nextLine();
 
-							System.out.println("나이: ");
-							input2 = scn.nextInt();
-							scn.nextLine();
+						System.out.println("나이: ");
+						input2 = scn.nextInt();
+						scn.nextLine();
 
-							System.out.println("전화번호: ");
-							input3 = scn.nextLine();
+						System.out.println("전화번호: ");
+						input3 = scn.nextLine();
 
-							Friend f1 = new Friend(input1, input2, input3);
-							fAry[i] = f1;
-						}
-					
+						Friend f1 = new Friend(input1, input2, input3);
+						fAry[i] = f1;
+					}
 				}
 			}
 			if (menu == 9)
 				run = false;
 		}
 		System.out.println("프로그램이 종료됩니다.");
-
 	}
-
 }

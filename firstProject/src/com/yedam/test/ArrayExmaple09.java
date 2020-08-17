@@ -23,6 +23,7 @@ public class ArrayExmaple09 {
 				scores = new int[studentNum]; // 배열 생성
 
 			} else if (selectNo == 2) {
+				
 				System.out.println("점수 입력 : ");
 				for (int i = 0; i < scores.length; i++) {
 					scores[i] = scanner.nextInt();
