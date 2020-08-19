@@ -11,8 +11,9 @@ public class EmpDAO {
 	public void modifyEmployee(Employee emp) {
 	Connection conn = DBConnection.getConnection();
 	
-	String sql = "UPDATE emp_temp SET salary = salary + 10 WHERE employee_id = 101; " 
-			+ emp;
+	String sql = "UPDATE emp_temp SET salary = " + emp.getSalary() 
+		      	+ "salary + 10 WHERE employee_id = 101; " + emp;
+			
 	
 	System.out.println(sql);
 	try {
@@ -28,8 +29,7 @@ public class EmpDAO {
 	public void deleteEmployee(int employee_id) {
 		Connection conn = DBConnection.getConnection();
 		
-		String sql = "DELETE INTO emp_temp(employee_id) " 
-				+ employee_id;
+		String sql = "DELETE FROM emp_temp WHERE employee_id = " + employee_id;
 		
 		System.out.println(sql);
 		try {
@@ -46,7 +46,8 @@ public class EmpDAO {
 		Connection conn = DBConnection.getConnection();
 //		insert into emp_temp(employee_id, last_name, email, hire_date, job_id)
 //		values (301, 'test', 'test', '2020-05-05', 'IT_PROG');
-		String sql = "INSERT INTO emp_temp(employee_id, last_name, email, hire_date, job_id) " + "VALUES ("
+		String sql = "INSERT INTO emp_temp(employee_id, last_name, email, hire_date, job_id) " + emp
+				+ "VALUES ("
 				+ emp.getEmployeeId() + ",\' " 
 				+ emp.getLastName() + "\',\' " 
 				+ emp.getEmail() + "\',\' " 
