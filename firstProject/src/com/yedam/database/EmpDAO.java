@@ -46,11 +46,11 @@ public class EmpDAO {
 		Connection conn = DBConnection.getConnection();
 //		insert into emp_temp(employee_id, last_name, email, hire_date, job_id)
 //		values (301, 'test', 'test', '2020-05-05', 'IT_PROG');
-		String sql = "INSERT INTO emp_temp(employee_id, last_name, email, hire_date, job_id) " + emp
+		String sql = "INSERT INTO emp_temp(employee_id, first_name, last_name, hire_date, job_id) " + emp
 				+ "VALUES ("
-				+ emp.getEmployeeId() + ",\' " 
+				+ emp.getEmployeeId() + ",\' "
+				+ emp.getFirstName() + "\',\' "
 				+ emp.getLastName() + "\',\' " 
-				+ emp.getEmail() + "\',\' " 
 				+ emp.getHireDate() + "\',\' " 
 				+ emp.getJobId() + "\')";
 		
@@ -79,8 +79,7 @@ public class EmpDAO {
 			int idx = 0;
 			while (rs.next()) { // ResultSet 가져올꼐 있으면 참
 				Employee emp = new Employee();
-				String firstName = rs.getString("first_name");
-				emp.setFirstName(firstName);
+				emp.setFirstName(rs.getString("first_name"));
 				emp.setEmployeeId(rs.getInt("employee_id"));
 				emp.setLastName(rs.getString("last_name"));
 				emp.setSalary(rs.getInt("salary"));

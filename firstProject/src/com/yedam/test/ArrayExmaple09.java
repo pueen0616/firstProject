@@ -21,7 +21,7 @@ public class ArrayExmaple09 {
 				System.out.print("학생 수 : ");
 				studentNum = scanner.nextInt();
 				scores = new int[studentNum]; // 배열 생성
-
+					
 			} else if (selectNo == 2) {
 				
 				System.out.println("점수 입력 : ");
